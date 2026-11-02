@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+.body{
+    contain: paint;
+}
+:root{
+    --font:"Unbounded", sans-serif
+}
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 20px;
+    font-family: var(--font);
+    background-color: rgb(252, 244, 189);
+    animation: navbar 1s forwards;
+    transform: translatey(-1500px);
+    transition: all 2s;
+    position: relative;
+    z-index: 100;
+}
+@keyframes navbar {
+    from{
+        transform: translatey(-1500px);
+    }
+    to{
+        transform: translatey(0px);
+    }
+}
+.logoimg{
+    height:80px;
+    width:80px;
+    border-radius:50%
+}
+.subnav{
+    gap:20px;
+    transition:all 1s;
+    /* z-index: 9999; */
+}
+.subnav1{
+    gap:10px
+}
+.subnav1 h2{
+    color:brown;
+    font-size: clamp(19px, 3vh, 50px);
+}
+.subnav a{
+    font-size:clamp(10px, 2.5vh, 20px);
+    text-decoration: none;
+    position: relative;
+    padding: 5px 0px;
+    cursor: pointer;
+    color:brown
+}
+.subnav a::before{
+    content:"";
+    width:0px;
+    height:3px;
+    background-color: brown;
+    position:absolute;
+    bottom:0px;
+    border-radius:5px;
+    transition:all 1s
+}
+.subnav a:hover::before{
+    width:100%
+}
+.navbar input:checked+div{
+    left:2%
+}
+.navbar input,.navbar label{
+    display:none;
+    font-size:20px
+}
+.sec1 {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.28) 60%, rgba(0, 0, 0, 0.02) 100%), url("./aboutimages/about.png");
+    min-height: 70vh;
+    background-position: center;
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+    font-family: var(--font);
+    color: white;
+    font-size: 25px;
+    padding: 20px;
+    animation: sec1 1s forwards;
+    transition: all 1s;
+    transform: scale(0);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+@keyframes sec1 {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.sec1 p {
+    font-size: clamp(20px, 3.2vh, 40px);
+}
+
+.sec1 p:nth-child(1) {
+    color: rgb(252, 244, 189);
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0px;
+    animation: typing 1.5s steps(7) forwards;
+    animation-delay: 1s;
+}
+
+@keyframes typing {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 7ch;
+    }
+}
+
+.sec1 h3 {
+    font-size: clamp(30px, 5vh, 100px);
+    opacity: 0;
+    animation: text1 1s forwards;
+    animation-delay: 2.5s;
+}
+.sec1 h3+p {
+    opacity: 0;
+    animation: text1 1s forwards;
+    animation-delay: 3.5s;
+}
+@keyframes text1 {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+.sec2{
+    padding:80px 20px ;
+    font-family: var(--font);
+    gap: 30px;
+    justify-content: start;
+    animation: reveal-card linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 80%;
+    /* position: relative;
+    z-index: 2; */
+}
+@keyframes reveal-card {
+    from {
+        opacity: 0;
+        transform: scale(0);
+        
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.img1{
+    width:450px;
+    height:300px;
+    border-radius: 10px;
+    border: 2px solid brown;
+    padding:5px
+}
+.para1{
+    font-size: clamp(15px, 3vh, 20px); 
+    color: brown; 
+}
+.sec2 div{
+    flex-direction: column;
+    gap:20px
+}
+.sec2 div h4{
+        font-size: clamp(25px, 4vh, 50px);
+        text-align: center;
+}
+.para2{
+   font-size: clamp(15px, 2vh, 20px); 
+   line-height: 30px;
+   text-align: center;
+}
+.sec2 div button{
+    padding:10px 30px;
+    border:none;
+    background-color: brown;
+    color: rgb(252, 244, 189);
+    border-radius: 10px;
+    gap:8px    
+}
+.sec3{
+    gap:20px;
+    padding: 0px 80px;
+    animation: reveal-card linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+}
+.img2{
+    height:80px;
+    width:80px;
+    border-radius: 50%;
+    border: 2px solid brown;
+    padding:5px
+}
+.line{
+    height:100px;
+    width:2px;
+    background-color: brown;
+}
+.box1{
+    gap:15px;
+    width:450px;
+    height:100px;
+    padding:10px;
+    font-family: var(--font);
+    justify-content: start;
+    align-items: start;
+}
+.box1 div{
+    width:100%;
+    gap:10px;
+    flex-direction: column;
+}
+.box1 h4{
+    font-size: clamp(20px, 3vh, 50px);
+    color: brown;
+    text-align: center;
+}
+.box1 p{
+    font-size: clamp(13px, 2vh, 20px);
+    text-align: center;
+}
+.sec4{
+    background:url(./homeimages/footer.png);
+    min-height:250px;
+    background-position: center;
+    margin-top:50px;
+    align-items: end;
+    justify-content: end;
+    padding:50px;
+    font-size: clamp(20px, 3.2vh, 40px);
+    color:rgb(252, 244, 189) ;
+}
+@media only screen and (min-width:300px) and (max-width:1050px) {
+    .sec3{
+        flex-direction: column;
+    }
+    .line{
+        display:none
+    }
+}
+@media only screen and (min-width:300px) and (max-width:900px) {
+    .navbar .subnav {
+        position: absolute;
+        flex-direction: column;
+        justify-content: start;
+        width: 96%;
+        height: 54vh;
+        left: 100%;
+        top: 110px;
+        background-color: rgb(252, 244, 189);
+        padding-top: 30px;
+        border-radius: 10px;
+    }
+
+    .navbar label {
+        display: inline-block;
+    }
+    .sec2{
+        flex-direction: column;
+        
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 500px) {
+    .sec1 p {
+        font-size: clamp(13px, 2.2vh, 40px);
+    }
+    .sec1 h3 {
+        font-size: clamp(25px, 3vh, 100px);
+    }
+    .sec1 p {
+        font-size: clamp(13px, 2.2vh, 40px);
+    }
+    .img1{
+        width:300px;
+        height: 250px;
+    }
+    .sec2{
+    padding:30px 20px ;
+    animation-range: entry 0% cover 38%
+    }
+    .box1{
+        width:100%
+    }  
+    .sec3{
+        padding: 0px 10px;
+        animation-range: entry 0% cover 38%
+    } 
+    
+}

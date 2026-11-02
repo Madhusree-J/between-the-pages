@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+.body{
+    contain: paint;
+}
+:root{
+    --font:"Unbounded", sans-serif
+}
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 20px;
+    font-family: var(--font);
+    background-color: rgb(252, 244, 189);
+    animation: navbar 1s forwards;
+    transform: translatey(-1500px);
+    transition: all 2s;
+}
+@keyframes navbar {
+    from{
+        transform: translatey(-1500px);
+    }
+    to{
+        transform: translatey(0px);
+    }
+}
+.logoimg{
+    height:80px;
+    width:80px;
+    border-radius:50%
+}
+.subnav{
+    gap:20px;
+    transition:all 1s;
+}
+.subnav1{
+    gap:10px
+}
+.subnav1 h2{
+    color:brown;
+    font-size: clamp(19px, 3vh, 50px);
+}
+.subnav a{
+    font-size:clamp(10px, 2.5vh, 20px);
+    text-decoration: none;
+    position: relative;
+    padding: 5px 0px;
+    cursor: pointer;
+    color:brown
+}
+.subnav a::before{
+    content:"";
+    width:0px;
+    height:3px;
+    background-color: brown;
+    position:absolute;
+    bottom:0px;
+    border-radius:5px;
+    transition:all 1s
+}
+.subnav a:hover::before{
+    width:100%
+}
+.navbar input:checked+div{
+    left:2%
+}
+.navbar input,.navbar label{
+    display:none;
+    font-size:20px
+}
+.sec1{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.28) 40%, rgba(0, 0, 0, 0.02) 100%), url("./homeimages/sec3.png");
+    min-height:80vh;
+    padding:20px;
+    flex-direction: column;
+    gap: 15px;
+    font-family: var(--font);
+    color: white;
+    font-size:25px;
+    padding:20px;
+    animation: sec1 1s forwards;
+    transition: all 1s;
+    transform: scale(0);
+    position: relative;
+    z-index: -1;
+    text-align: center;
+}
+@keyframes sec1 {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+.sec1 p{
+    font-size:clamp(20px, 3.2vh, 40px);
+}
+.sec1 p:nth-child(1){
+    color: rgb(252, 244, 189);
+    overflow: hidden; 
+    white-space: nowrap;
+    width:0px;
+    animation: typing 1.5s steps(7) forwards;
+    animation-delay: 1s;
+}
+@keyframes typing {
+    from{
+        width:0%;
+    }
+    to{
+        width: 7ch;
+    }
+}
+.sec1 h3{
+    font-size: clamp(30px, 5vh, 100px);
+    opacity:0;
+    animation: text1 1s forwards;
+    animation-delay: 2.5s;
+}
+@keyframes text1 {
+    from{
+        opacity:0
+    }
+    to{
+        opacity:1
+    }
+}
+.sec1 h3+p{
+    opacity:0;
+    animation: text1 1s forwards;
+    animation-delay: 3.5s;
+}
+.sec2{
+    padding:30px 20px;
+    font-family: var(--font);
+    animation: reveal-card linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 80%;
+}
+@keyframes reveal-card {
+    from {
+        opacity: 0;
+        transform: scale(0);
+        
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.sec2 p:first-child{
+    color:brown;
+    font-size:clamp(15px, 3vh, 20px )
+}
+.sec2 h3{
+    font-size:clamp(18px, 4vh, 50px);
+    padding:20px 0px;
+    position: relative;
+}
+.sec2 h3::before{
+    content:"";
+    width:100px;
+    height:3px;
+    background-color: brown;
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    border-radius:5px;
+}
+.box2{
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+.box3{
+    gap:40px;
+    flex-wrap: wrap;
+}
+.box3 div{
+    flex-direction: column;
+    gap:20px;
+    font-size:20px;
+    transition: all 1s;
+}
+.box3 div:hover{
+    transform: scale(1.1);
+}
+.sec2 img{
+    height: 200px;
+    width:200px;
+    border-radius: 50%;
+    transition: all 1s;
+    border: 0px solid black;
+}
+.sec2 .box2 p{
+    font-size: clamp(15px, 3vh, 20px);
+}
+.sec3{
+    padding:30px 20px;
+    font-family: var(--font);
+    align-items: start;
+}
+.rightbox{
+    width:25%;
+    padding:10px;
+    min-height: 700px;
+    position: relative;
+}
+.rightbox>div{
+    padding:30px;
+    box-shadow: 0px 0px 10px 1px lightgrey;
+    background-color:rgb(252, 244, 189) ;
+    border-radius: 10px;
+}
+.icn1{
+    justify-content: start;
+    gap:10px
+}
+.icn2{
+    color:brown
+}
+.filters1{
+    justify-content: start;
+    flex-direction: column;
+    gap:25px;
+    align-items: start;
+    width:100%
+}
+.filters0{
+    gap:20px;
+}
+.filters2{
+    justify-content: space-between;
+    width:100%;
+    font-size: 13px;
+}
+.filters2 input{
+    height:17px;
+    width:17px;
+    background-color: brown;
+}
+.filterres+input:checked~div{
+    left:6%
+}
+.filterres+input:checked~.button1{
+    left: 53px;
+}
+.filterres+input{
+    display: none;
+}
+.button1{
+    gap:10px;
+    border:none;
+    border-radius: 30px;
+    padding:10px 30px;
+    font-family: var(--font);
+    background-color: brown;
+    color: white;;
+    margin: auto;
+}
+.leftbox{
+    width:75%;
+    padding:10px 0px;
+    min-height: 700px;
+    flex-wrap: wrap;
+    gap:25px
+}
+.box1 {
+    height: 318px;
+    width: 329px;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px rgb(205, 205, 205);
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.box1:hover{
+    transform: scale(1.05);
+}
+.box4 {
+    gap: 10px;
+    height: 433px;
+    padding: 0px;
+    margin: 0px;
+}
+.box4 button{
+    padding:10px 30px;
+    border:none;
+    border-radius: 20px;
+    background-color: brown;
+    color: white;
+}
+.img1 {
+    height: 210px;
+    width: 170px;
+}
+.next{
+    gap:10px
+}
+.next span:nth-child(1), .next span:nth-child(6){
+    height:45px;
+    width:45px;
+    border-radius: 50%;
+    border:2px solid black;
+    font-family: var(--font);
+}
+.next span:nth-child(2),.next span:nth-child(3),.next span:nth-child(4),.next span:nth-child(5){
+    height:35px;
+    width:35px;
+    border-radius: 50%;
+    font-family: var(--font);
+} 
+.next span:nth-child(2):hover,.next span:nth-child(3):hover,.next span:nth-child(4):hover,.next span:nth-child(5):hover{
+    background-color:brown ;
+    color: rgb(252, 244, 189);
+}
+.sec4{
+    background:url(./homeimages/footer.png);
+    min-height:250px;
+    background-position: center;
+    margin-top:50px;
+    align-items: end;
+    justify-content: end;
+    padding:50px;
+    font-size: clamp(20px, 3.2vh, 40px);
+    color:rgb(252, 244, 189) ;
+}
+@media only screen and (min-width:300px) and (max-width:1100px){
+    .filterres~div{
+        position:absolute;
+        width:300px;
+        height:112vh;
+        left:-600%;
+        top:82px;
+        padding:30px 10px;
+        border-radius: 10px;
+        background-color:rgb(252, 244, 189) ;
+         transition: all 1s;
+    }
+     .button1{
+       position:absolute;
+        width:200px;
+        right:150%;
+        top: 748px;
+     }
+     .rightbox{
+        position:absolute;
+        left:0px;
+     }
+     .rightbox>div{
+        background-color: transparent;
+        box-shadow: none;
+        position: relative;
+        top: -25px;
+     }
+     .leftbox{
+        width:100%;
+        padding-top: 70px;
+
+     }
+}
+@media only screen and (min-width:300px) and (max-width:900px){
+    .navbar .subnav{
+        position:absolute;
+        flex-direction: column;
+        justify-content: start;
+        width:96%;
+        height:54vh;
+        left:100%;
+        top:110px;
+        background-color: rgb(252, 244, 189);
+        padding-top:30px;
+        border-radius: 10px;
+    }
+    .navbar label{
+        display: inline-block;
+    }
+}
+@media only screen and (min-width:300px) and (max-width:600px){
+    .logoimg{
+        height: 50px;
+        width:50px
+    }
+    .navbar{
+        padding:10px
+    }
+    .navbar .subnav{
+        top:90px
+    }
+    .sec2 {
+        animation-range: entry 0% entry 60%;
+    }
+    .box2 {
+        flex-direction: column;
+        gap: 20px;
+        align-items: start;
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 500px) {
+    .sec1 h3 {
+        font-size: clamp(25px, 3vh, 100px);
+    }
+    .sec1 p {
+        font-size: clamp(13px, 2.2vh, 40px);
+    }
+}

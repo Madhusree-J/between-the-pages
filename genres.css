@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+.body{
+    contain: paint;
+}
+:root{
+    --font:"Unbounded", sans-serif
+}
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 20px;
+    font-family: var(--font);
+    background-color: rgb(252, 244, 189);
+    animation: navbar 1s forwards;
+    transform: translatey(-1500px);
+    transition: all 2s;
+}
+@keyframes navbar {
+    from{
+        transform: translatey(-1500px);
+    }
+    to{
+        transform: translatey(0px);
+    }
+}
+.logoimg{
+    height:80px;
+    width:80px;
+    border-radius:50%
+}
+.subnav{
+    gap:20px;
+    transition:all 1s;
+    /* z-index: 9999; */
+}
+.subnav1{
+    gap:10px
+}
+.subnav1 h2{
+    color:brown;
+    font-size: clamp(19px, 3vh, 50px);
+}
+.subnav a{
+    font-size:clamp(10px, 2.5vh, 20px);
+    text-decoration: none;
+    position: relative;
+    padding: 5px 0px;
+    cursor: pointer;
+    color:brown
+}
+.subnav a::before{
+    content:"";
+    width:0px;
+    height:3px;
+    background-color: brown;
+    position:absolute;
+    bottom:0px;
+    border-radius:5px;
+    transition:all 1s
+}
+.subnav a:hover::before{
+    width:100%
+}
+.navbar input:checked+div{
+    left:2%
+}
+.navbar input,.navbar label{
+    display:none;
+    font-size:20px
+}
+.sec1{
+    min-height: 80vh;
+    background-color: red;
+    flex-direction: column;
+    padding:50px 50px;
+    font-family: var(--font);
+    color:white;
+    gap:20px;
+    animation: sec1 1s forwards;
+    transition: all 1s;
+    transform: scale(0);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.28) 40%, rgba(0, 0, 0, 0.02) 100%), url("./genres/generes.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: relative;
+    z-index: -999;
+}
+@keyframes sec1 {
+    from{
+        
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+.sec1 p:first-child{
+    overflow: hidden; 
+    white-space: nowrap;
+    width:0px;
+    animation: typing 1.5s steps(10) forwards;
+    animation-delay: 1s;
+}
+@keyframes typing {
+    from{
+        width:0%;
+    }
+    to{
+        width: 10ch;
+    }
+}
+.sec1 h3{
+    font-size: clamp(30px, 5vh, 100px);
+    width:250px;
+    overflow: hidden; 
+    white-space: nowrap;
+    width:0px;
+    animation: typing1 1.5s steps(6) forwards;
+    animation-delay: 2.5s;
+}
+@keyframes typing1 {
+    from{
+        width:0%;
+    }
+    to{
+        width: 6ch;
+    }
+}
+.sec2{
+    padding:10px 50px;
+    font-family: var(--font);
+    color:brown;
+    gap:20px;
+}
+.box1{
+    flex-wrap: wrap;
+    gap:100px;
+    padding-top: 50px;
+    transform: translateX(-1500px);
+    opacity: 0;
+    animation: box1 linear both;
+    animation-delay: 4.5s;
+    transition: all 1s;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+}
+@keyframes box1 {
+    from{
+        opacity: 0;
+        transform: translateX(-2700px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.box2{
+    height:300px;
+    width:300px;
+    border-radius: 150px 150px 10px 10px;
+    border: 2px solid brown;
+    padding:5px;
+    flex-direction: column;
+    gap:15px;
+    font-family: var(--font);
+    justify-content: start;
+    transition: all 1s;
+}
+.box2:hover{
+    box-shadow:
+        0 0 10px rgba(139, 69, 19, 0.25),
+        0 0 25px rgba(139, 69, 19, 0.20),
+        0 0 45px rgba(101, 67, 33, 0.15);
+    transform: translateY(-8px);
+}
+.box2 h4{
+    font-size:25px
+}
+.box2 img{
+    height:180px;
+    width:100%;
+    border-radius: 150px 150px 10px 10px;
+}
+.box2 button{
+    padding: 8px 20px;
+    border-radius: 20px;
+    border:none;
+    background-color: brown;
+    color: rgb(252, 244, 189) ;
+}
+.sec6{
+    background:url(./homeimages/footer.png);
+    min-height:250px;
+    background-position: center;
+    margin-top:50px;
+    align-items: end;
+    justify-content: end;
+    padding:50px;
+    font-size: clamp(20px, 3.2vh, 40px);
+    color:rgb(252, 244, 189) ;
+}
+@media only screen and (min-width:300px) and (max-width:900px) {
+    .navbar .subnav {
+        position: absolute;
+        flex-direction: column;
+        justify-content: start;
+        width: 96%;
+        height: 54vh;
+        left: 100%;
+        top: 110px;
+        background-color: rgb(252, 244, 189);
+        padding-top: 30px;
+        border-radius: 10px;
+    }
+
+    .navbar label {
+        display: inline-block;
+    }
+    .box1{
+        animation-range: entry 0% cover 15%;
+    }
+}

@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+.body{
+    contain: paint;
+}
+:root{
+    --font:"Unbounded", sans-serif
+}
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 20px;
+    font-family: var(--font);
+    background-color: rgb(252, 244, 189);
+    animation: navbar 1s forwards;
+    transform: translatey(-1500px);
+    transition: all 2s;
+}
+@keyframes navbar {
+    from{
+        transform: translatey(-1500px);
+    }
+    to{
+        transform: translatey(0px);
+    }
+}
+.logoimg{
+    height:80px;
+    width:80px;
+    border-radius:50%
+}
+.subnav{
+    gap:20px;
+    transition:all 1s;
+}
+.subnav1{
+    gap:10px
+}
+.subnav1 h2{
+    color:brown;
+    font-size: clamp(19px, 3vh, 50px);
+}
+.subnav a{
+    font-size:clamp(10px, 2.5vh, 20px);
+    text-decoration: none;
+    position: relative;
+    padding: 5px 0px;
+    cursor: pointer;
+    color:brown
+}
+.subnav a::before{
+    content:"";
+    width:0px;
+    height:3px;
+    background-color: brown;
+    position:absolute;
+    bottom:0px;
+    border-radius:5px;
+    transition:all 1s
+}
+.subnav a:hover::before{
+    width:100%
+}
+.navbar input:checked+div{
+    left:2%
+}
+.navbar input,.navbar label{
+    display:none;
+    font-size:20px
+}
+.sec1{
+    height:88vh;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.28) 40%, rgba(0, 0, 0, 0.02) 100%), url("./homeimages/herosection.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    flex-direction: column;
+    align-items: start;
+    padding:0px 50px;
+    font-family: var(--font);
+    color:white;
+    gap:20px;
+    animation: sec1 1s forwards;
+    transition: all 1s;
+    transform: scale(0);
+    position: relative;
+    z-index: -1;
+}
+@keyframes sec1 {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+.sec1 p:first-child{
+    color: rgb(252, 244, 189);
+    overflow: hidden; 
+    white-space: nowrap;
+    width:0px;
+    animation: typing 1.5s steps(10) forwards;
+    animation-delay: 1s;
+}
+@keyframes typing {
+    from{
+        width:0%;
+    }
+    to{
+        width: 10ch;
+    }
+}
+.sec1 p{
+    font-size:clamp(20px, 3.2vh, 40px);
+}
+.para1{
+    overflow: hidden; 
+    white-space: nowrap;
+    width:0px;
+    animation: typing2 1.5s steps(17) forwards;
+    animation-delay: 4s;
+}
+@keyframes typing2 {
+    from{
+        width:0%;
+    }
+    to{
+        width: 24ch;
+    }
+}
+.sec1 h3{
+    font-size: clamp(30px, 5vh, 100px);
+    width:250px;
+    overflow: hidden; 
+    white-space: nowrap;
+    width:0px;
+    animation: typing1 1.5s steps(17) forwards;
+    animation-delay: 2.5s;
+}
+@keyframes typing1 {
+    from{
+        width:0%;
+    }
+    to{
+        width: 14ch;
+    }
+}
+.sec1 button{
+    padding:10px 30px;
+    border:none;
+    border-radius:10px;
+    font-size:15px;
+    gap:10px;
+    background-color: rgb(252, 244, 189);
+    color: brown;
+    animation: btn1 1s forwards;
+    animation-delay: 5.5s;
+    opacity: 0;
+}
+@keyframes btn1 {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.sec2{
+    padding:30px 20px;
+    font-family: var(--font);
+    animation: reveal-card linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 80%;
+}
+.sec2 p:first-child{
+    color:brown;
+    font-size:clamp(15px, 3vh, 20px );
+}
+.sec2 h3{
+    font-size:clamp(25px, 4vh, 50px);
+    padding:20px 0px;
+    position: relative;
+}
+.sec2 h3::before{
+    content:"";
+    width:100px;
+    height:3px;
+    background-color: brown;
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    border-radius:5px;
+}
+.books{
+    gap:30px;
+    flex-wrap: wrap;
+}
+.box1{
+    height:318px;
+    width:250px;
+    padding:20px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px rgb(205, 205, 205);
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    
+}
+.books:has(.box1:hover) .box1:not(:hover) {
+    filter: blur(3px);
+    opacity: 0.45;
+    transform: scale(0.94);
+}
+.books .box1:hover {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(-10px) scale(1.08);
+    box-shadow: 0 15px 30px rgba(70, 40, 20, 0.25);
+    border: 2px solid brown;
+    z-index: 2;
+    position: relative;
+}
+@keyframes reveal-card {
+    from {
+        opacity: 0;
+        transform: scale(0);
+        
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.img1{
+    height:210px;
+    width:170px
+}
+.box1 h4{
+    padding-top:20px
+}
+.box1 p{
+    font-size:15px
+}
+/* section 3 */
+.sec3{
+    min-height:300px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.28) 40%, rgba(0, 0, 0, 0.02) 100%), url("./homeimages/sec3.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    font-family: var(--font);
+    color: white;
+    font-size:25px;
+    padding:20px;
+    animation:sec5 linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+.sec4{
+    padding:30px 20px;
+    font-family: var(--font);
+    animation: reveal-card linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 80%;
+}
+.sec3 p span{
+    display: block;
+}
+.sec4 p:first-child{
+    color:brown;
+    font-size:clamp(15px, 3vh, 20px )
+}
+.sec4 h3{
+    font-size:clamp(18px, 4vh, 50px);
+    padding:20px 0px;
+    position: relative;
+}
+.sec4 h3::before{
+    content:"";
+    width:100px;
+    height:3px;
+    background-color: brown;
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    border-radius:5px;
+}
+.box2{
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+.box3{
+    gap:40px;
+    flex-wrap: wrap;
+}
+.box3 div{
+    flex-direction: column;
+    gap:20px;
+    font-size:20px;
+    transition: all 1s;
+}
+.box3 div:hover{
+    transform: scale(1.1);
+}
+.sec4 img{
+    height: 200px;
+    width:200px;
+    border-radius: 50%;
+    transition: all 1s;
+    border: 0px solid black;
+}
+.sec4 .box2 p{
+    font-size: clamp(15px, 3vh, 20px);
+}
+.sec5{
+    background:linear-gradient(to left, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.28) 40%, rgba(0, 0, 0, 0.02) 100%), url("./homeimages/author.png");
+    background-repeat: no-repeat;
+    min-height: 300px;
+    background-position: center;
+    align-items: end;
+    flex-direction: column;
+    color: white;
+    animation:sec5 linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+@keyframes sec5 {
+    from{
+        transform: translatex(-1500px);
+    }
+    to{
+        transform: translatex(0px);
+    }
+}
+.sec5 div{
+    width:45%;
+    padding-right:200px;
+    flex-direction: column;
+    gap:10px;
+    align-items: start;
+}
+.txt{
+    font-size: clamp(15px, 6vh, 20px);
+}
+.sec5 h4{
+   font-size: clamp(45px, 3vh, 20px); 
+}
+.sec5 span{
+    font-size:50px;
+    display: inline-block;
+}
+.sec5 button{
+    padding:10px 30px;
+    border:none;
+    border-radius:10px;
+    font-size:15px;
+    gap:10px;
+    background-color: rgb(252, 244, 189);
+    color: brown;
+}
+.box4{
+    gap:10px;
+    height:400px;
+    padding:0px;
+    margin:0px
+}
+.box4 div span{
+    font-size: 10px;
+}
+.box4 div{
+    align-items: center;
+    color:goldenrod
+}
+.sec6{
+    min-height: 300px;
+    font-family: var(--font);
+    color: white;
+    font-size: 25px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.28) 80%, rgba(0, 0, 0, 0.02) 100%) , url(./homeimages/sec6.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    text-align: center;
+    flex-direction: column;
+    gap:20px;
+}
+.sec6 span{
+    display: block;
+}
+.sec6 button{
+    padding:10px 30px;
+    border:none;
+    border-radius: 10px;
+    gap:10px;
+    font-size: 15px;
+    background-color: rgb(252, 244, 189);
+    color: brown;
+}
+@media only screen and (min-width:300px) and (max-width:1100px){
+    .sec5 div{
+    padding-right:50px;
+}
+.sec5{
+    background-position: -277px;
+}
+}
+@media only screen and (min-width:300px) and (max-width:900px){
+    .navbar .subnav{
+        position:absolute;
+        flex-direction: column;
+        justify-content: start;
+        width:96%;
+        height:54vh;
+        left:100%;
+        top:110px;
+        background-color: rgb(252, 244, 189);
+        padding-top:30px;
+        border-radius: 10px;
+    }
+    .navbar label{
+        display: inline-block;
+    }
+}
+@media only screen and (min-width:300px) and (max-width:750px){
+    .sec5 div{
+    padding:10px;
+    width:100%;
+    align-items: center;
+}
+.txt{
+    text-align: center;
+}
+.sec5{
+    background-position: -344px;
+}
+.sec3{
+    text-align: center;
+}
+}
+@media only screen and (min-width:300px) and (max-width:600px){
+    .logoimg{
+        height: 50px;
+        width:50px
+    }
+    .navbar{
+        padding:10px
+    }
+    .navbar .subnav{
+        top:90px
+    }
+}
+@media only screen and (min-width:300px) and (max-width:500px){
+    .box2 {
+        flex-direction: column;
+        gap:20px;
+        align-items: start;
+    }
+    .sec4 .box2 p {
+        width:100%;
+        text-align: center;
+    }
+    .sec1 p {
+    font-size: clamp(13px, 2.2vh, 40px);
+    }
+    .sec1 h3{
+        font-size: clamp(25px, 3vh, 100px);
+    }
+    .sec1{
+        padding:0px 10px;
+        align-items: center;
+        text-align: center;
+    }
+    .sec2{
+        animation-range: entry 0% entry 60%;
+    }
+    .sec4{
+        animation-range: entry 0% entry 38%;
+    }
+    .sec3, .sec5{
+        animation-range: entry 0% cover 20%
+    }
+    .sec7{
+        animation-range: entry 0% entry 30%;
+    }
+}
